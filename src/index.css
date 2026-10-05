@@ -1,0 +1,1581 @@
+/* RESET & BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: #111214; color: #fff; font-family: 'Inter', sans-serif; text-transform: uppercase; scroll-behavior: smooth; }
+
+/* HEADER */
+.portfolio-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px 8%; position: fixed; width: 100%; top: 0; z-index: 100;
+    background: rgba(17, 18, 20, 0.9);
+}
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: #fff; font-size: 0.75rem; font-weight: 600; }
+
+/* HERO */
+.hero-section {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 0 8%; gap: 50px;
+}
+.circle-mask {
+    width: 500px; height: 500px; background: #fff; border-radius: 50%;
+    overflow: hidden; flex-shrink: 0;
+}
+.circle-mask img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); }
+
+.name-display { font-size: 6rem; line-height: 0.85; font-weight: 900; margin-bottom: 20px; }
+.outline { color: transparent; -webkit-text-stroke: 1px #fff; }
+.sub-title { font-weight: 700; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 15px; }
+.description { text-transform: none; color: #888; max-width: 450px; line-height: 1.6; }
+
+/* HERO CTAs */
+.hero-ctas { display: flex; gap: 20px; margin-top: 30px; }
+.cv-button, .view-project-btn { 
+    padding: 15px 30px; border-radius: 30px; border: 1px solid #333;
+    background: transparent; color: #fff; cursor: pointer; text-transform: uppercase;
+    font-size: 0.7rem; font-weight: 700; transition: 0.3s ease;
+}
+.cv-button:hover, .view-project-btn:hover { background: #fff; color: #000; }
+
+/* ABOUT SECTION */
+.about-section { padding: 120px 8%; background-color: #0d0d0d; border-top: 1px solid #1a1a1a; }
+.section-label { font-size: 0.7rem; color: #444; letter-spacing: 4px; margin-bottom: 60px; }
+.about-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: start; }
+.about-main-text p { font-size: 2.5rem; line-height: 1.2; font-weight: 800; color: #fff; }
+.about-sub-details p { font-size: 1.1rem; line-height: 1.8; color: #888; text-transform: none; margin-bottom: 25px; }
+.deployment-note { padding-top: 20px; border-top: 1px solid #222; font-style: italic; font-size: 0.95rem !important; }
+
+/* SECTIONS COMMON */
+.section-dark { padding: 100px 8%; border-top: 1px solid #222; }
+.label { color: #666; font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 10px; }
+.title { font-size: 3rem; font-weight: 800; margin-bottom: 40px; }
+
+/* SERVICE CARDS */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.service-card { background: #191a1d; padding: 40px; position: relative; border: 1px solid #222; }
+.card-num { position: absolute; bottom: 20px; right: 20px; font-size: 3rem; font-weight: 900; color: #222; }
+
+/* SKILLS BARS */
+.skills-container { display: flex; gap: 100px; align-items: center; }
+.skills-bars { flex: 1; }
+.bar-group { margin-bottom: 25px; }
+.bar-label { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.8rem; }
+.bar { height: 4px; background: #222; width: 100%; position: relative; }
+.fill { height: 100%; background: #fff; position: absolute; left: 0; }
+
+/* PORTFOLIO GRID */
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.work-img { height: 350px; background: #191a1d; display: flex; align-items: center; justify-content: center; border: 1px solid #222; font-size: 0.8rem; color: #444; }
+.work-info h3 { font-size: 1.2rem; margin: 15px 0 5px; }
+.work-info p { color: #666; font-size: 0.8rem; }
+
+/* CONTACT SECTION (Matching Image Reference) */
+.contact-section { padding: 120px 8%; background: #111214; text-align: center; }
+.contact-container { max-width: 600px; margin: 0 auto; }
+.contact-title { font-size: 4rem; font-weight: 900; margin-bottom: 10px; }
+.contact-subtitle { text-transform: none; color: #888; margin-bottom: 50px; }
+
+.contact-form { display: flex; flex-direction: column; gap: 15px; }
+.contact-form input, .contact-form textarea {
+    background: #1c1d21; border: 1px solid #2a2b2f; padding: 20px; color: #fff; border-radius: 8px; font-family: inherit;
+}
+.send-btn { 
+    background: #5c62ec; color: #fff; border: none; padding: 20px; border-radius: 8px; 
+    font-weight: 700; cursor: pointer; margin-top: 10px; transition: 0.3s;
+}
+.send-btn:hover { background: #4a50d6; }
+.contact-socials { display: flex; justify-content: center; gap: 30px; margin-top: 40px; font-size: 0.8rem; }
+.contact-socials a { color: #fff; text-decoration: none; opacity: 0.6; }
+.contact-socials a:hover { opacity: 1; }
+
+/* FOOTER */
+.footer { padding: 80px 8%; background: #000; }
+.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .hero-section, .services-grid, .portfolio-grid, .skills-container, .footer-grid, .about-layout { grid-template-columns: 1fr; display: flex; flex-direction: column; }
+    .circle-mask { width: 300px; height: 300px; }
+    .name-display { font-size: 3.5rem; }
+}
+
+/* HERO SOCIAL LINKS */
+.hero-social-links {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+    padding-left: 5px;
+}
+
+.hero-social-links a {
+    color: #888; /* Default subtle color */
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Smooth transition for hover */
+    display: inline-block;
+}
+
+/* Hover Response */
+.hero-social-links a:hover {
+    color: #fff; /* Brighten on hover */
+    transform: translateY(-5px); /* Moves up slightly */
+}
+
+/* Icon specific colors on hover (Optional) */
+.hero-social-links a:hover .fa-github { color: #fff; }
+.hero-social-links a:hover .fa-facebook-f { color: #1877F2; }
+.hero-social-links a:hover .fa-instagram { color: #E4405F; }
+.hero-social-links a:hover .fa-linkedin-in { color: #0A66C2; }
+
+/* TECH CAROUSEL */
+.tech-carousel-container {
+    width: 100%;
+    overflow: hidden;
+    background: #0d0d0d;
+    padding: 50px 0;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track {
+    display: flex;
+    /* This width ensures enough room for the gaps */
+    width: max-content; 
+    animation: scrollInfinite 35s linear infinite; /* Slightly slower for better visibility */
+}
+
+.carousel-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* INCREASED SPACING HERE */
+    gap: 120px; 
+    padding: 0 60px; /* Adds extra space at the ends of each group */
+}
+
+.carousel-group i {
+    font-size: 2.2rem;
+    color: #555; 
+    filter: grayscale(100%); /* Keeps them muted like your profile pic */
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* Hover effect: Glow and Color */
+.carousel-group i:hover {
+    color: #fff;
+    filter: grayscale(0%);
+    transform: scale(1.25);
+}
+
+/* THE ANIMATION */
+@keyframes scrollInfinite {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Moves by exactly one half (one group) */
+        transform: translateX(-50%);
+    }
+}
+
+/* Stops moving when you want to click a link or see a tech */
+.tech-carousel-container:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+.circle-mask {
+    width: 500px;
+    height: 500px;
+    background: #1c1d21; /* Dark background instead of white for PNG transparency */
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-mask img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps image proportions */
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+}
+
+.circle-mask:hover img {
+    filter: grayscale(0%); /* Optional: image turns to color on hover */
+}
+
+/* --- UPDATED CIRCLE MASK WITH ANIMATION --- */
+.circle-mask {
+    width: 420px; 
+    height: 420px; 
+    background: #1c1d21; 
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    border: 1px solid #2a2b2f;
+    
+    /* ADD THIS LINE FOR THE MOVEMENT */
+    animation: floatAndBreathe 6s ease-in-out infinite;
+}
+
+/* --- THE MOVEMENT ANIMATION --- */
+@keyframes floatAndBreathe {
+    0% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        /* Moves up slightly and grows a tiny bit */
+        transform: translateY(-15px) scale(1.02);
+    }
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+}
+
+/* Smooth transition for the image inside when hovering */
+.circle-mask img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: grayscale(100%);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Keep the scale-up on hover if you like, it works well with the animation */
+.circle-mask:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.08);
+}
+
+/* --- UPDATED HERO LAYOUT --- */
+.hero-section {
+    height: 100vh; 
+    display: flex; 
+    align-items: center; /* Aligns picture and text height-wise */
+    justify-content: center;
+    padding: 0 8%; 
+    gap: 60px;
+}
+
+/* --- ADJUSTED NAME & TITLES --- */
+.name-display { 
+    font-size: 4.5rem; /* Reduced from 6rem to make it less overwhelming */
+    line-height: 0.9; 
+    font-weight: 900; 
+    margin-bottom: 15px; 
+}
+
+.sub-title { 
+    font-weight: 700; 
+    letter-spacing: 2px; 
+    font-size: 1.1rem; /* Increased size for visibility */
+    margin-bottom: 15px; 
+    color: #fff;
+    white-space: nowrap; /* Keeps text on one line for typing effect */
+}
+
+/* --- TYPING ANIMATION --- */
+.typing-container {
+    display: inline-block;
+}
+
+.typing-text {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 3px solid #5c62ec; /* The typewriter cursor */
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: 2px; 
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #5c62ec; }
+}
+
+/* --- ADJUSTED CIRCLE MASK --- */
+.circle-mask {
+    width: 450px; /* Balanced size */
+    height: 450px; 
+    background: #1c1d21; 
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #2a2b2f;
+    animation: floatAndBreathe 6s ease-in-out infinite;
+}
+
+.circle-mask img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    filter: grayscale(100%); 
+}
+
+/* --- RESET & BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: #111214; color: #fff; font-family: 'Inter', sans-serif; text-transform: uppercase; scroll-behavior: smooth; overflow-x: hidden; }
+
+/* --- HEADER --- */
+.portfolio-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px 8%; position: fixed; width: 100%; top: 0; z-index: 100;
+    background: rgba(17, 18, 20, 0.9);
+}
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: #fff; font-size: 0.75rem; font-weight: 600; }
+
+/* --- HERO SECTION --- */
+.hero-section {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 0 8%; gap: 60px;
+}
+
+/* ADJUSTED SMALLER CIRCLE MASK */
+.circle-mask {
+    width: 350px; /* Reduced from 520px/450px */
+    height: 350px; /* Reduced from 520px/450px */
+    background: #1c1d21; 
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #2a2b2f;
+    z-index: 1;
+    animation: floatAndBreathe 6s ease-in-out infinite;
+}
+
+.circle-mask img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    filter: grayscale(100%); 
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.circle-mask:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+@keyframes floatAndBreathe {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-15px) scale(1.02); }
+}
+
+/* --- HERO TEXT --- */
+.name-display { font-size: 4rem; line-height: 0.9; font-weight: 900; margin-bottom: 15px; }
+.outline { color: transparent; -webkit-text-stroke: 1px #fff; }
+
+.typing-container { display: inline-block; min-height: 1.5rem; }
+.sub-title { font-weight: 700; letter-spacing: 2px; font-size: 1rem; margin-bottom: 15px; color: #fff; }
+
+.typing-text {
+    overflow: hidden;
+    border-right: 3px solid #5c62ec;
+    white-space: nowrap;
+    margin: 0;
+    letter-spacing: 2px;
+    width: 0;
+    animation: typeAndErase 8s steps(40, end) infinite, blink-caret .75s step-end infinite;
+}
+
+@keyframes typeAndErase {
+  0%, 10% { width: 0; }
+  45%, 55% { width: 100%; }
+  90%, 100% { width: 0; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #5c62ec; }
+}
+
+.description { text-transform: none; color: #888; max-width: 400px; line-height: 1.6; font-size: 0.9rem; }
+
+/* --- BUTTONS & SOCIALS --- */
+.hero-ctas { display: flex; gap: 20px; margin-top: 25px; }
+.cv-button, .view-project-btn { 
+    padding: 12px 25px; border-radius: 30px; border: 1px solid #333;
+    background: transparent; color: #fff; cursor: pointer; text-transform: uppercase;
+    font-size: 0.65rem; font-weight: 700; transition: 0.3s ease;
+}
+.cv-button:hover, .view-project-btn:hover { background: #fff; color: #000; }
+
+.hero-social-links { display: flex; gap: 20px; margin-top: 20px; }
+.hero-social-links a { color: #888; font-size: 1.2rem; transition: 0.3s; }
+.hero-social-links a:hover { color: #fff; transform: translateY(-3px); }
+
+/* --- TECH CAROUSEL --- */
+.tech-carousel-container {
+    width: 100%; overflow: hidden; background: #0d0d0d;
+    padding: 40px 0; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a;
+}
+.carousel-track { display: flex; width: max-content; animation: scrollInfinite 35s linear infinite; }
+.carousel-group { display: flex; align-items: center; gap: 100px; padding: 0 50px; }
+.carousel-group i { font-size: 2rem; color: #555; transition: 0.4s ease; cursor: pointer; }
+.carousel-group i:hover { color: #fff; transform: scale(1.2); }
+
+@keyframes scrollInfinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- SECTIONS --- */
+.about-section { padding: 100px 8%; background-color: #0d0d0d; }
+.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.about-main-text p { font-size: 2rem; font-weight: 800; color: #fff; }
+.about-sub-details p { font-size: 1rem; color: #888; text-transform: none; line-height: 1.6; }
+
+.contact-section { padding: 100px 8%; text-align: center; }
+.contact-container { max-width: 500px; margin: 0 auto; }
+.contact-form { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
+.contact-form input, .contact-form textarea {
+    background: #1c1d21; border: 1px solid #2a2b2f; padding: 15px; color: #fff; border-radius: 8px; font-family: inherit;
+}
+.send-btn { background: #5c62ec; color: #fff; border: none; padding: 15px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+
+.footer { padding: 60px 8%; background: #000; border-top: 1px solid #111; }
+.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .hero-section { flex-direction: column; text-align: center; height: auto; padding: 120px 8%; }
+    .circle-mask { width: 280px; height: 280px; }
+    .name-display { font-size: 3rem; }
+    .about-layout, .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .typing-text { width: auto; border: none; animation: none; white-space: normal; }
+}
+
+
+/* --- HERO IMAGE CONTAINER --- */
+.hero-image-container {
+    position: relative; /* Essential for positioning badges */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- FLOATING BADGES --- */
+.floating-badge {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95); /* White box */
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 10;
+    min-width: 110px;
+    animation: floatBadge 4s ease-in-out infinite;
+}
+
+.badge-number {
+    color: #111;
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.badge-text {
+    color: #555;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+/* Positioning the 3 badges */
+.badge-left {
+    top: 20%;
+    left: -40px;
+}
+
+.badge-right {
+    bottom: 25%;
+    right: -40px;
+    animation-delay: 1s; /* Offset animation for realism */
+}
+
+.badge-bottom {
+    bottom: -10px;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+/* Animation for the floating effect */
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Adjust circle mask to ensure it doesn't overlap weirdly */
+.circle-mask {
+    width: 380px; 
+    height: 380px;
+    border: 4px solid #c2c2c2; /* Aesthetic border to match your glow */
+}
+
+/* RESPONSIVE BADGES */
+@media (max-width: 1024px) {
+    .badge-left { left: 0; top: 10%; }
+    .badge-right { right: 0; bottom: 10%; }
+    .badge-bottom { display: none; } /* Hide 3rd on mobile to avoid clutter */
+    .circle-mask { width: 300px; height: 300px; }
+}
+
+
+/* --- SKILLS & TECHSTACK STYLES --- */
+.skills-section {
+    padding: 100px 8%;
+    background-color: #111214; /* Matches your hero background */
+    border-top: 1px solid #1a1a1a;
+}
+
+.skills-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 40px;
+}
+
+.skills-header-group .title {
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.skills-subtitle {
+    text-transform: none;
+    color: #888;
+    line-height: 1.6;
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+
+/* The circular email button from your image */
+.skills-contact-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    border: 1px solid #333;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.skills-contact-circle span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: lowercase;
+}
+
+.skills-contact-circle:hover {
+    background: #fff;
+}
+
+.skills-contact-circle:hover span {
+    color: #000;
+}
+
+/* SKILL BARS */
+.skills-bars-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    justify-content: center;
+}
+
+.skill-item {
+    width: 100%;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.skill-info span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.skill-bar-bg {
+    width: 100%;
+    height: 2px; /* Thin minimalist look */
+    background: #333;
+    position: relative;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: #fff; /* White bars for contrast */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 1.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .skills-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .skills-header-group .title {
+        font-size: 2.5rem;
+    }
+}
+/* Center the "02 // CURIOUS ABOUT ME" label */
+.section-label-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+/* Three-column layout for symmetry */
+.skills-layout-three-col {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr; /* Center is slightly wider for readability */
+  gap: 50px;
+  align-items: center; /* Vertically aligns bars with the middle text */
+}
+
+/* Center Content Styling */
+.skills-center-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-center-content .title {
+  font-size: 2.2rem; /* Compact and clean */
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.skills-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  max-width: 360px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Skill Bars on the sides */
+.skills-side-bars {
+  width: 100%;
+}
+
+.skill-item {
+  margin-bottom: 25px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* Thinner lines for a more aesthetic look */
+.skill-bar-bg {
+  width: 100%;
+  height: 3px; 
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: #fff; /* Solid white to match your modern look */
+  border-radius: 2px;
+  transition: width 1.2s ease-in-out;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 1024px) {
+  .skills-layout-three-col {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  /* Put the text on top when stacked */
+  .skills-center-content {
+    order: 1;
+  }
+  
+  .skills-side-bars {
+    order: 2;
+  }
+}
+
+
+.projects-slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto; /* Keeps it functional but we hide the bar below */
+  scroll-behavior: smooth; /* Crucial for the sliding effect */
+  padding-bottom: 20px;
+  
+  /* Hide scrollbar for clean aesthetic like the video */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.projects-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-arrow {
+  cursor: pointer;
+  user-select: none; /* Prevents text highlighting when clicking fast */
+  transition: transform 0.2s active;
+}
+
+.nav-arrow:active {
+  transform: scale(0.9); /* Small feedback when tapped */
+}
+/* --- PROJECTS SLIDER STYLES --- */
+.projects-section {
+  padding: 100px 0 100px 8%; 
+  background-color: #111214;
+  overflow: hidden;
+}
+
+.projects-slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: hidden; /* Hides scrollbar but allows code to scroll it */
+  scroll-behavior: smooth;
+  padding-right: 8%;
+}
+
+.project-card {
+  min-width: 500px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background: #1c1d21;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: 0.3s;
+}
+
+.project-card:hover .project-overlay { opacity: 1; }
+.project-card:hover img { transform: scale(1.05); }
+
+.view-project {
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  font-size: 0.7rem;
+}
+
+.project-info h3 { margin-top: 15px; font-size: 1.2rem; }
+.project-info p { color: #666; font-size: 0.8rem; text-transform: none; }
+
+.slider-nav { display: flex; gap: 15px; margin-top: 30px; }
+.nav-arrow {
+  width: 45px; height: 45px;
+  border: 1px solid #333; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: 0.3s;
+  user-select: none;
+}
+
+.nav-arrow:hover { background: #fff; color: #000; border-color: #fff; }
+.nav-arrow:active { transform: scale(0.9); }
+
+/* Ensure the cards are sized to fit 3 per row */
+.project-card {
+  min-width: calc(33.33% - 20px); 
+  flex-shrink: 0;
+}
+
+/* This makes sure the API image fits the box perfectly */
+.project-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Styles for the 'View Project' link button */
+.view-project {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.view-project:hover {
+  background: white;
+  color: black;
+}
+
+/* Mobile: Show 1 card instead of 3 */
+@media (max-width: 768px) {
+  .project-card {
+    min-width: 90%;
+  }
+}
+
+/* The container for the cards */
+.projects-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; 
+  padding: 10px 0;
+}
+
+/* Force 3 cards to fit perfectly */
+.project-card {
+  /* 33.33% minus the gap space */
+  flex: 0 0 calc(33.33% - 20px); 
+  min-width: calc(33.33% - 20px);
+}
+
+.project-image-wrapper {
+  width: 100%;
+  height: 220px; /* Reduced height to keep it compact */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps the screenshot from stretching */
+  object-position: top;
+}
+
+.projects-slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: hidden; /* This keeps projects in a straight line for the buttons to work */
+  padding: 20px 0;
+  scroll-behavior: smooth;
+}
+
+.project-card {
+  min-width: calc(33.33% - 20px); /* Shows 3 at a time */
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: top;
+  background: #222; /* Placeholder color while API loads */
+}
+
+@media (max-width: 1024px) {
+  .project-card {
+    min-width: calc(50% - 15px); /* Shows 2 on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    min-width: 100%; /* Shows 1 on phones */
+  }
+}
+
+
+/* --- SERVICES SECTION --- */
+.services-section {
+    padding: 100px 8%;
+    background-color: #111214;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background: #191a1d;
+    padding: 50px 40px; /* More padding for a premium feel */
+    position: relative;
+    border: 1px solid #222;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden; /* Keeps the internal animations contained */
+    
+    /* THE MOVEMENT TRANSITION */
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+/* --- HOVER ANIMATION STATE --- */
+.service-card:hover {
+    background: #ffffff;
+    transform: translateY(-15px) scale(1.02); /* Moves UP and grows slightly */
+    border-color: #ffffff;
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1); /* Subtle white glow */
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.service-card p {
+    color: #888;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-transform: none;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+    max-width: 90%;
+}
+
+/* FLIP COLORS & SLIGHT TEXT SLIDE ON HOVER */
+.service-card:hover h3 {
+    color: #000;
+    transform: translateX(10px); /* Text slides right 10px on hover */
+}
+
+.service-card:hover p {
+    color: #333;
+    transform: translateX(10px); /* Paragraph slides right 10px on hover */
+}
+
+/* --- NUMBER ANIMATION --- */
+.card-num {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03); /* Almost invisible initially */
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+.service-card:hover .card-num {
+    color: rgba(0, 0, 0, 0.08); /* Darkens slightly on the white background */
+    bottom: 30px; /* Number floats up slightly on hover */
+    transform: scale(1.1);
+}
+
+/* Mobile: Stack them and reduce the movement so it's not buggy on touch */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* --- CONTACT SECTION --- */
+.contact-section {
+  padding: 120px 8%;
+  background: #111214;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  max-width: 800px;
+  width: 100%;
+}
+
+.contact-header {
+  text-align: left; /* Aligned with your Projects and Services */
+  margin-bottom: 60px;
+}
+
+.contact-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 10px 0;
+}
+
+.contact-subtitle {
+  text-transform: none;
+  color: #888;
+  font-size: 1.1rem;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* --- FORM MOVEMENT & INTERACTION --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  width: 100%;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Moving the input slightly up when you hover it */
+.input-group:hover {
+  transform: translateY(-5px);
+}
+
+.contact-form input, 
+.contact-form textarea {
+  width: 100%;
+  background: #1c1d21;
+  border: 1px solid #2a2b2f;
+  padding: 25px;
+  color: #fff;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+  outline: none;
+}
+
+/* THE "WHITE HIGHLIGHT" ON FOCUS */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+  background: #fff;
+  color: #000; /* Text flips to black for readability */
+  border-color: #fff;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+  transform: scale(1.02); /* Slight grow effect */
+}
+
+/* Placeholder color behavior */
+.contact-form input::placeholder, 
+.contact-form textarea::placeholder {
+  color: #555;
+  transition: color 0.4s;
+}
+
+.contact-form input:focus::placeholder, 
+.contact-form textarea:focus::placeholder {
+  color: #999;
+}
+
+/* --- BUTTON MOVEMENT --- */
+.send-btn {
+  background: #fdfdfd;
+  color: #000000;
+  border: none;
+  padding: 25px;
+  border-radius: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  margin-top: 20px;
+}
+
+.send-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(92, 98, 236, 0.3);
+}
+
+.send-btn i {
+  transition: transform 0.4s ease;
+}
+
+.send-btn:hover i {
+  transform: translateX(10px); /* Arrow slides right on hover */
+}
+
+/* --- SOCIAL LINKS --- */
+.contact-socials {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+  border-top: 1px solid #222;
+  padding-top: 40px;
+}
+
+.contact-socials a {
+  color: #666;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.contact-socials a:hover {
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+/* --- FOOTER SECTION --- */
+.footer {
+  padding: 100px 8% 40px 8%; /* Top padding 100px, Sides 8% */
+  background-color: #111214;
+  border-top: 1px solid #222;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+/* --- THE MOVING FOOTER CARD --- */
+.footer-card {
+  background: #191a1d;
+  padding: 40px;
+  border: 1px solid #222;
+  border-radius: 12px;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* THE HOVER HIGHLIGHT */
+.footer-card:hover {
+  background: #ffffff;
+  transform: translateY(-10px); /* Moves it up */
+  border-color: #ffffff;
+}
+
+.footer-label {
+  font-size: 0.7rem;
+  color: #555;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  transition: color 0.3s;
+}
+
+.footer-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: none; /* Keeps email/location natural */
+  transition: color 0.3s;
+}
+
+/* FLIP COLORS TO BLACK ON HOVER */
+.footer-card:hover h3, 
+.footer-card:hover .social-icons i {
+  color: #000;
+}
+
+/* --- SOCIAL ICONS --- */
+.social-icons {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.social-icons i {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.social-icons i:hover {
+  transform: scale(1.3); /* Icons pop when hovered individually */
+}
+
+/* --- FOOTER BOTTOM LINE --- */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  padding-top: 40px;
+}
+
+.footer-bottom p {
+  font-size: 0.7rem;
+  color: #444;
+  letter-spacing: 2px;
+}
+
+/* RESPONSIVE: Stack columns on smaller screens */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-card {
+    padding: 30px;
+  }
+}
+
+
+/* --- UPDATED HEADER & NAV ANIMATION --- */
+.portfolio-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 25px 8%; 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000;
+    /* Using your new lighter background color with glass effect */
+    background: rgba(26, 28, 32, 0.85); 
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 40px; /* Wider gap for a cleaner look */
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: #888; /* Dim color by default */
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+/* THE HOVER ANIMATION */
+.nav-links a:hover {
+    color: #fff; /* Brightens on hover */
+}
+
+/* Creating the moving underline */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -8px; /* Positioned below the text */
+    left: 0;
+    background-color: #ffffff; /* Your purple accent color */
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Line grows to full width on hover */
+}
+
+/* Smooth scroll offset adjustment */
+/* This ensures that when you click a link, the header doesn't cover the title */
+section {
+    scroll-margin-top: 100px; 
+}
+
+/* 1. ENABLE SMOOTH SCROLLING FOR THE WHOLE PAGE */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. OFFSET FOR FIXED HEADER 
+   Since your header is 'fixed', we need to tell the browser 
+   to stop scrolling about 90px BEFORE the section starts. */
+section {
+  scroll-margin-top: 90px; 
+}
+
+/* 3. HEADER STYLES & HOVER TRANSITION */
+.portfolio-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(10, 10, 10, 0.8); /* Glass effect */
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #888;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  /* Smooth color transition */
+  transition: color 0.3s ease;
+}
+
+/* Change color on hover */
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* 4. UNDERLINE ANIMATION (The "Progressive" Look) */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #fff; /* Or your accent color */
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* This makes the jump turn into a smooth slide */
+html {
+  scroll-behavior: smooth;
+}
+
+/* This ensures your header doesn't cover the 'Projects' title when you arrive */
+#projects {
+  scroll-margin-top: 100px;
+}
+
+/* Container styling */
+.word-typing {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* Individual word styling and animation */
+.word-typing span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(3px);
+  /* Uses the --i variable from the JSX to stagger the start time */
+  animation: wordReveal 0.2s forwards;
+  animation-delay: calc(var(--i) * 0.1s); 
+}
+
+@keyframes wordReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keep your existing bold and accent styles */
+.about-main-text strong, 
+.word-typing strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.accent-text {
+  color: #fff; /* Or your specific accent color */
+  font-weight: bold;
+}
+
+
+/* Initial state: Words are invisible */
+.word-typing span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(5px);
+  /* This transition ensures they disappear instantly when you scroll away */
+  transition: opacity 0s; 
+}
+
+/* When the section is visible, trigger the typing animation */
+.play-animation .word-typing span {
+  animation: wordReveal 0.3s forwards;
+  animation-delay: calc(var(--i) * 0.1s); /* Adjust 0.1s for faster/slower typing */
+}
+
+@keyframes wordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Typing Animation Core --- */
+
+/* 1. Base state: Hide words and push them down slightly */
+.word-typing span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(10px);
+  /* No transition here! We want them to vanish instantly when scrolling away */
+}
+
+/* 2. Animation state: Triggers when the section is visible */
+.play-animation .word-typing span {
+  animation: wordReveal 0.3s forwards;
+  animation-delay: calc(var(--i) * 0.07s); /* Speed of typing */
+}
+
+@keyframes wordReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- PRELOADER STYLES --- */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-logo {
+  font-size: 4rem;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  letter-spacing: 10px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loader-bar {
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader-bar::after {
+  content: '';
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  animation: loading-progress 2s forwards;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.95); }
+}
+
+@keyframes loading-progress {
+  0% { left: -100%; }
+  100% { left: 0%; }
+}
+
